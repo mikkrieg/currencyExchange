@@ -1,24 +1,38 @@
+/* Element styling */
+
 body {
   background-color: #FFE4E1;
 }
 
+h1 {
+  margin: 3% 0;
+}
+
+/* Class styling */
+
+div>select.form-control {
+  margin-left: 5%;
+}
+
+/* ID styling */
 #output {
   display: none;
 }
 
+#error-div{
+  display: none;
+}
+
 #arrow {
-  margin: -6.3% 0 0 5%;
-  font-size: 100px;
+  margin: -5.2% 1% 0 3%;
+  font-size: 5.5em;
 }
 
-h1 {
-  margin-bottom: 40px;
+#amount {
+  margin-left: -5%;
 }
 
-label {
-  margin: 15px 0px;
-}
-
-div>.form-control {
-  margin-left: 12%;
+#convert {
+  display: flex;
+  margin: 2% 45.5%;
 }
