@@ -6,10 +6,19 @@ body {
   display: none;
 }
 
+#arrow {
+  margin: -6.3% 0 0 5%;
+  font-size: 100px;
+}
+
 h1 {
   margin-bottom: 40px;
 }
 
 label {
   margin: 15px 0px;
+}
+
+div>.form-control {
+  margin-left: 12%;
 }

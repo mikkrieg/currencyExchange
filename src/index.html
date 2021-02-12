@@ -8,47 +8,57 @@
   <body>
     <div class="container">
       <h1 class="text-center">Currency Exchange</h1>
-      <div class="row hide-row">
-        <div class="col-6">
-          <select class="form-control" id="currency-1">
-            <option></option>
-            <option value="USD">United States Dollar</option>
-            <option value="UAH">Ukraine Hryvnia</option>
-            <option value="TWD">New Taiwan Dollar</option>
-            <option value="SEK">Swedish Krona</option>
-            <option value="RUB">Russian Ruble</option>
-            <option value="PKR">Pakistani Rupee</option>
-            <option value="MXN">Mexican Peso</option>
-            <option value="MAD">Moroccan Dirham</option>
-            <option value="KRW">South Korean Won</option>
-            <option value="BYN">Belarusian Ruble</option>
-          </select>
+        <div class="card hide">
+          <div class="card-title">
+            <div class="card-body">
+              <p class="text-center">Select a currency in the left box to convert it to a currency in the right box!</p>
+              <div class="row select-row">
+                <div class="col-4 offset-1">
+                  <select class="form-control" id="currency-1">
+                    <option></option>
+                    <option value="USD">United States Dollar</option>
+                    <option value="UAH">Ukraine Hryvnia</option>
+                    <option value="TWD">New Taiwan Dollar</option>
+                    <option value="SEK">Swedish Krona</option>
+                    <option value="RUB">Russian Ruble</option>
+                    <option value="PKR">Pakistani Rupee</option>
+                    <option value="MXN">Mexican Peso</option>
+                    <option value="MAD">Moroccan Dirham</option>
+                    <option value="KRW">South Korean Won</option>
+                    <option value="BYN">Belarusian Ruble</option>
+                  </select>
+                </div>
+                <div class="col-1" id="arrow">
+                  &rarr;
+                </div>
+                <div class="col-4">
+                  <select class="form-control" id="currency-2">
+                    <option></option>
+                    <option value="USD">United States Dollar</option>
+                    <option value="UAH">Ukraine Hryvnia</option>
+                    <option value="TWD">New Taiwan Dollar</option>
+                    <option value="SEK">Swedish Krona</option>
+                    <option value="RUB">Russian Ruble</option>
+                    <option value="PKR">Pakistani Rupee</option>
+                    <option value="MXN">Mexican Peso</option>
+                    <option value="MAD">Moroccan Dirham</option>
+                    <option value="KRW">South Korean Won</option>
+                    <option value="BYN">Belarusian Ruble</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row hide">
+                <div class='col-4'>
+                  <label for="amount">
+                    Input an amount you would like to convert:
+                    <input type="number" id="amount" name="amount" class="form-control">
+                  </label>
+                  <button type="button" class="btn btn-primary" id="convert">Convert!</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-6">
-          <select class="form-control" id="currency-2">
-            <option></option>
-            <option value="USD">United States Dollar</option>
-            <option value="UAH">Ukraine Hryvnia</option>
-            <option value="TWD">New Taiwan Dollar</option>
-            <option value="SEK">Swedish Krona</option>
-            <option value="RUB">Russian Ruble</option>
-            <option value="PKR">Pakistani Rupee</option>
-            <option value="MXN">Mexican Peso</option>
-            <option value="MAD">Moroccan Dirham</option>
-            <option value="KRW">South Korean Won</option>
-            <option value="BYN">Belarusian Ruble</option>
-          </select>
-        </div>
-      </div>
-      <div class="row hide-row">
-        <div class='col-4'>
-          <label for="amount">
-            Input an amount you would like to convert:
-            <input type="number" id="amount" name="amount" class="form-control">
-          </label>
-          <button type="button" class="btn btn-primary" id="convert">Convert!</button>
-        </div>
-      </div>
       <div class="row">
         <div id="output">
 
