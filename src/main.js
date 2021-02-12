@@ -23,16 +23,17 @@ function displayConversion(response, amount){
     clearValues();
     returnHome();
   } else if(response.message === "unsupported-code"){
-    $('div#output').show().text(`An Error occured: One of the currencies you entered is either incorrect or unsupported`);
+    $('div#error-div').show().html(`<p>An Error occured: One of the currencies you entered is either incorrect or unsupported</p>`);
   } else {
-    $('div#output').show().text(`An Error occured: ${response.message}`);
+    $('div#error-div').show().html(`<p>An Error occured: Please enter a missing currency or valid amount</p>`);
   } 
 }
 
 function returnHome(){
   $('button#return').on('click', function(){
-    $('div.hide').show();
+    $('div#error-div').hide();
     $('div#output').hide();
+    $('div.hide').show();
   });
 }
 
