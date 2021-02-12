@@ -20,7 +20,6 @@ import './css/styles.css';
 
 
 
-
 // FUNCTIONALITY NESSECCARY
 // A user should be able to enter in US dollars and get a different currency in return using the API
 // Users should be able to convert US currency to atleast 5 others
