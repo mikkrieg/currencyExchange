@@ -1,15 +1,21 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './js/getCurrency.js'; 
-
+// import CurrencyExchange from './js/currencyExchange.js';
 
 
 function main(){
-  const currency1 = $('#money').val();
-  const currency2 = $('#money').val();
-  CurrencyService.getCurrency(currency1, currency2);
+  $('button#convert').on('click', function(){
+    const currency1 = $('select#currency1').val();
+    const currency2 = $('select#currency2').val();
+    const amount = $('input#amount').val();
+    CurrencyService.getCurrency(currency1, currency2, amount)
+    .then(function(response){
+        console.log(response)
+    });
+  });
 }
 
 main();
