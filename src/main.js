@@ -8,7 +8,7 @@ function displayConversion(response, amount){
   if(response.result === 'success'){
     const lastUpdate = (response.time_last_update_utc).slice(0,25);
     const nextUpdate = (response.time_next_update_utc).slice(0,25);
-    $('div.hide-row').hide();
+    $('div.hide').hide();
     $('div#output').show();
     $('div#output').html(`
     <p>You picked ${response.base_code} to be converted to ${response.target_code}!</p>
@@ -31,7 +31,7 @@ function displayConversion(response, amount){
 
 function returnHome(){
   $('button#return').on('click', function(){
-    $('div.hide-row').show();
+    $('div.hide').show();
     $('div#output').hide();
   });
 }
