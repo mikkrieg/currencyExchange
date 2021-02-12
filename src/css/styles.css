@@ -14,6 +14,14 @@ div>select.form-control {
   margin-left: 5%;
 }
 
+.card {
+  background-color: #FFF3E1;
+}
+
+.center {
+  display: flex;
+}
+
 /* ID styling */
 #output {
   display: none;
@@ -21,6 +29,11 @@ div>select.form-control {
 
 #error-div{
   display: none;
+}
+
+#warning {
+  background-color: #FF4040;
+  margin: 0 28%;
 }
 
 #arrow {
@@ -32,7 +45,14 @@ div>select.form-control {
   margin-left: -5%;
 }
 
-#convert {
-  display: flex;
+#convert{
   margin: 2% 45.5%;
+}
+
+#return {
+  margin: 2% 40%;
+}
+
+#injected-p {
+  font-size: 1.5em;
 }
