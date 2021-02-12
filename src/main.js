@@ -5,6 +5,7 @@ import './css/styles.css';
 import CurrencyService from './js/getCurrency.js';
 
 function displayConversion(response, amount){
+  const errorArray = Object.values(response);
   if(response.result === 'success'){
     const lastUpdate = (response.time_last_update_utc).slice(0,25);
     const nextUpdate = (response.time_next_update_utc).slice(0,25);
@@ -33,10 +34,10 @@ function displayConversion(response, amount){
     `);
     clearValues();
     returnHome();
-  } else if(response.message === "unsupported-code"){
-    $('div#error-div').show().html(`<p>An Error occured: One of the currencies you entered is either incorrect or unsupported</p>`);
+  } else if(errorArray[1] === "unsupported-code"){
+    $('div#error-div').show().html(`<p class="text-center warning">An Error occured: One of the currencies you entered is either incorrect or unsupported</p>`);
   } else {
-    $('div#error-div').show().html(`<p class="text-center" id="warning">An Error occured: Please enter a missing currency or valid amount</p>`);
+    $('div#error-div').show().html(`<p class="text-center warning">An Error occured: Please enter a missing currency or valid amount</p>`);
   } 
 }
 
