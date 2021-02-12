@@ -5,6 +5,16 @@ import './css/styles.css';
 import CurrencyService from './js/getCurrency.js'; 
 // import CurrencyExchange from './js/currencyExchange.js';
 
+function displayConversion(response, amount){
+  if(response.result === "success"){
+    $('div#output').html(`<p>You picked ${response.base_code} to be converted to ${response.target_code}</p>
+                          <p>The amount you chose to convert was: ${amount}</p>
+                          <p>The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate}</p>
+                          <p>$${amount}${response.base_code} converted to ${response.target_code} is: ${response.conversion_result}</p>`)
+  } else {
+    $('div#output').text(`An Error occured: ${response}`);
+  }
+}
 
 function main(){
   $('button#convert').on('click', function(){
@@ -13,7 +23,7 @@ function main(){
     const amount = $('input#amount').val();
     CurrencyService.getCurrency(currency1, currency2, amount)
     .then(function(response){
-        console.log(response)
+        displayConversion(response, amount)
     });
   });
 }
