@@ -19,8 +19,6 @@ function displayConversion(response, amount){
               <p class="text-center" id="injected-p">${amount ? `The amount you chose to convert was: ${amount} ${response.base_code}</p>` : ""}
               <p class="text-center" id="injected-p">The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
               <p class="text-center" id="injected-p">${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: ${response.conversion_result} ${response.target_code}</p>` : "" }
-              <br/>
-              <br/>
               <div class="row">
                 <div class="col-12">
                   <button class="btn btn-secondary center" id="return">Do another conversion!</button>
