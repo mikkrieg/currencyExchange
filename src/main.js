@@ -2,23 +2,17 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import CurrencyService from './js/getCurrency.js'; 
 
 
 
+function main(){
+  const currency1 = $('#money').val();
+  const currency2 = $('#money').val();
+  CurrencyService.getCurrency(currency1, currency2);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+main();
 
 // FUNCTIONALITY NESSECCARY
 // A user should be able to enter in US dollars and get a different currency in return using the API
