@@ -2,8 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import CurrencyService from './js/getCurrency.js'; 
-// import CurrencyExchange from './js/currencyExchange.js';
+import CurrencyService from './js/getCurrency.js';
 
 function displayConversion(response, amount){
   if(response.result === 'success'){
@@ -12,20 +11,22 @@ function displayConversion(response, amount){
     $('div.hide-row').hide();
     $('div#output').show();
     $('div#output').html(`
-      <p>You picked ${response.base_code} to be converted to ${response.target_code}!</p>
-      <p>${amount ? `The amount you chose to convert was: ${amount} ${response.base_code}</p>` : ""}
-      <p>The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
-      <p>${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: ${response.conversion_result} ${response.target_code}</p>` : "" }
-      <p>Last updated: ${lastUpdate}</p>
-      <p>Next update: ${nextUpdate}</p>
-      <br/>
-      <br/>
-      <button class="btn btn-primary" id="return">Do another conversion!</button>`);
-      clearValues();
-      returnHome();
+    <p>You picked ${response.base_code} to be converted to ${response.target_code}!</p>
+    <p>${amount ? `The amount you chose to convert was: ${amount} ${response.base_code}</p>` : ""}
+    <p>The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
+    <p>${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: ${response.conversion_result} ${response.target_code}</p>` : "" }
+    <p>Last updated: ${lastUpdate}</p>
+    <p>Next update: ${nextUpdate}</p>
+    <br/>
+    <br/>
+    <button class="btn btn-primary" id="return">Do another conversion!</button>`);
+    clearValues();
+    returnHome();
+  } else if(response.message === "unsupported-code"){
+    $('div#output').show().text(`An Error occured: One of the currencies you entered is either incorrect or unsupported`);
   } else {
     $('div#output').show().text(`An Error occured: ${response.message}`);
-  }
+  } 
 }
 
 function returnHome(){
