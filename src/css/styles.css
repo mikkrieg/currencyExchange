@@ -22,6 +22,10 @@ div>select.form-control {
   display: flex;
 }
 
+.warning {
+  background-color: #FF4040;
+  margin: 0 28%;
+}
 /* ID styling */
 #output {
   display: none;
@@ -31,10 +35,7 @@ div>select.form-control {
   display: none;
 }
 
-#warning {
-  background-color: #FF4040;
-  margin: 0 28%;
-}
+
 
 #arrow {
   margin: -5.2% 1% 0 2.5%;
