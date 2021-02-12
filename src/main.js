@@ -25,7 +25,7 @@ function displayConversion(response, amount){
   } else if(response.message === "unsupported-code"){
     $('div#error-div').show().html(`<p>An Error occured: One of the currencies you entered is either incorrect or unsupported</p>`);
   } else {
-    $('div#error-div').show().html(`<p>An Error occured: Please enter a missing currency or valid amount</p>`);
+    $('div#error-div').show().html(`<p class="text-center" id="warning">An Error occured: Please enter a missing currency or valid amount</p>`);
   } 
 }
 
