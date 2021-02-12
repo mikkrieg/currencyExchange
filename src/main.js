@@ -11,15 +11,28 @@ function displayConversion(response, amount){
     $('div.hide').hide();
     $('div#output').show();
     $('div#output').html(`
-    <p>You picked ${response.base_code} to be converted to ${response.target_code}!</p>
-    <p>${amount ? `The amount you chose to convert was: ${amount} ${response.base_code}</p>` : ""}
-    <p>The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
-    <p>${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: ${response.conversion_result} ${response.target_code}</p>` : "" }
-    <p>Last updated: ${lastUpdate}</p>
-    <p>Next update: ${nextUpdate}</p>
-    <br/>
-    <br/>
-    <button class="btn btn-primary" id="return">Do another conversion!</button>`);
+      <div class="card">
+        <div class="card-title">
+          <div class="card-body">
+            <div class="card-text">
+              <p class="text-center" id="injected-p">You picked ${response.base_code} to be converted to ${response.target_code}!</p>
+              <p class="text-center" id="injected-p">${amount ? `The amount you chose to convert was: ${amount} ${response.base_code}</p>` : ""}
+              <p class="text-center" id="injected-p">The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
+              <p class="text-center" id="injected-p">${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: ${response.conversion_result} ${response.target_code}</p>` : "" }
+              <br/>
+              <br/>
+              <div class="row">
+                <div class="col-12">
+                  <button class="btn btn-secondary center" id="return">Do another conversion!</button>
+                </div>
+              </div>
+              <p>Last updated: ${lastUpdate}</p>
+              <p>Next update: ${nextUpdate}</p>
+            </div>
+          </div>
+        </div>
+      </div
+    `);
     clearValues();
     returnHome();
   } else if(response.message === "unsupported-code"){
