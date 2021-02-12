@@ -24,7 +24,7 @@ function displayConversion(response, amount){
       clearValues();
       returnHome();
   } else {
-    $('div#output').text(`An Error occured: ${response.message}`);
+    $('div#output').show().text(`An Error occured: ${response.message}`);
   }
 }
 
