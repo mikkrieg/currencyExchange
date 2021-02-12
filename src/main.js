@@ -6,13 +6,18 @@ import CurrencyService from './js/getCurrency.js';
 // import CurrencyExchange from './js/currencyExchange.js';
 
 function displayConversion(response, amount){
-  if(response.result === "success"){
-    $('div#output').html(`<p>You picked ${response.base_code} to be converted to ${response.target_code}</p>
-                          <p>The amount you chose to convert was: ${amount}</p>
-                          <p>The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate}</p>
-                          <p>$${amount}${response.base_code} converted to ${response.target_code} is: ${response.conversion_result}</p>`)
+  if(response.result === 'success'){
+    const lastUpdate = (response.time_last_update_utc).slice(0,25);
+    const nextUpdate = (response.time_next_update_utc).slice(0,25);
+    $('div#output').html(`
+      <p>You picked ${response.base_code} to be converted to ${response.target_code}!</p>
+      <p>${amount ? `The amount you chose to convert was: ${amount} ${response.base_code}</p>` : ""}
+      <p>The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
+      <p>${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: ${response.conversion_result} ${response.target_code}</p>` : "" }
+      <p>Last updated: ${lastUpdate}</p>
+      <p>Next update: ${nextUpdate}`);
   } else {
-    $('div#output').text(`An Error occured: ${response}`);
+    $('div#output').text(`An Error occured: ${response.message}`);
   }
 }
 
@@ -22,9 +27,9 @@ function main(){
     const currency2 = $('select#currency2').val();
     const amount = $('input#amount').val();
     CurrencyService.getCurrency(currency1, currency2, amount)
-    .then(function(response){
-        displayConversion(response, amount)
-    });
+      .then(function(response){
+        displayConversion(response, amount);
+      });
   });
 }
 
