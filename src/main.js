@@ -18,8 +18,10 @@ function displayConversion(response, amount){
             <div class="card-text">
               <p class="text-center" id="injected-p">You picked ${response.base_code} to be converted to ${response.target_code}!</p>
               <p class="text-center" id="injected-p">${amount ? `The amount you chose to convert was: ${amount} ${response.base_code}</p>` : ""}
-              <p class="text-center" id="injected-p">The conversion rate for ${response.base_code} to ${response.target_code} is: ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
-              <p class="text-center" id="injected-p">${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: ${response.conversion_result} ${response.target_code}</p>` : "" }
+              <p class="text-center" id="injected-p">The conversion rate for ${response.base_code} to ${response.target_code} is: 
+              ${response.conversion_rate} ${response.target_code} for every 1 ${response.base_code}</p>
+              <p class="text-center" id="injected-p">${amount ? `${amount} ${response.base_code} converted to ${response.target_code} is: 
+              ${response.conversion_result} ${response.target_code}</p>` : "" }
               <div class="row">
                 <div class="col-12">
                   <button class="btn btn-secondary center" id="return">Do another conversion!</button>
@@ -30,13 +32,14 @@ function displayConversion(response, amount){
             </div>
           </div>
         </div>
-      </div
-    `);
+      </div>`);
     clearValues();
     returnHome();
-  } else if(errorArray[1] === "unsupported-code"){
+  } else if(errorArray[1] === 'unsupported-code'){
+    // Error handling if query response does not include particular currency
     $('div#error-div').show().html(`<p class="text-center warning">An Error occured: One of the currencies you entered is either incorrect or unsupported</p>`);
   } else {
+    // Error handling if an input is empty and call is unable to fetch response
     $('div#error-div').show().html(`<p class="text-center warning">An Error occured: Please enter a missing currency or valid amount</p>`);
   } 
 }
@@ -66,20 +69,4 @@ function main(){
       });
   });
 }
-
 main();
-
-
-// FUNCTIONALITY NESSECCARY
-// A user should be able to enter in US dollars and get a different currency in return using the API - checked
-// Users should be able to convert US currency to atleast 5 others - checked
-// Error handling for API call - checked
-// API key in .env file - checked 
-// Message for if a user enters a currency that doesn't exist
-
-// MAIN OBJECTIVES
-// Correctly call API - checked
-//  Correctly parse data - checked
-//  error handling
-//  follow setup, store API key, add instructions to README
-// seperate logic into multipe files, use a static method - checked

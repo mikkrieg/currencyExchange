@@ -35,13 +35,13 @@ This is a program that communicates with the [ExchangeRate API](https://www.exch
 6. Run an "npm run start" command in the console. This will start the live dev server and open the project in the browser
 
 ## API Instructions
-* _This API requires an API key. To get a free or paid key visit [ExchangeRate API](https://www.exchangerate-api.com/) and sign up_
+* _To use this API you will require an API key. To get a free or paid key visit [ExchangeRate API](https://www.exchangerate-api.com/) and sign up_
 1. Once you have signed up, create a .env file in the top level of the project directory
 2. Navigate to your ExchangeRate account and copy your API key
-3. Create an API_KEY variable with your .env file. ex: "API_KEY=" 
+3. Create an API_KEY variable within your .env file. ex: "API_KEY=" 
 4. Paste your API key from the ExchangeRate site as the value of this API_KEY variable. ex: "API_KEY=pastedAPIkey"
-    * API_KEY is the default variable used by the program
-    * If you want to use a different variable name, change the name in the .env file AND in the getCurrency.js file
+    * API_KEY is the default variable name used by the program
+    * If you want to use a different variable name, change the name in the .env file AND in the src/js/getCurrency.js file
 
 ## Known Bugs
 
