@@ -1,27 +1,20 @@
 /* Element styling */
-
 body {
   background-color: #FFE4E1;
 }
-
 h1 {
   margin: 3% 0;
 }
-
 /* Class styling */
-
 div>select.form-control {
   margin-left: 5%;
 }
-
 .card {
   background-color: #FFF3E1;
 }
-
 .center {
   display: flex;
 }
-
 .warning {
   background-color: #FF4040;
   margin: 0 28%;
@@ -30,28 +23,22 @@ div>select.form-control {
 #output {
   display: none;
 }
-
 #error-div{
   display: none;
 }
-
 #arrow {
   margin: -5.2% 1% 0 2.5%;
   font-size: 5.5em;
 }
-
 #amount {
   margin-left: -5%;
 }
-
 #convert{
   margin: 2% 45.5%;
 }
-
 #return {
   margin: 2% 30% 2% 41.5%;
 }
-
 #injected-p {
   font-size: 1.3em;
 }

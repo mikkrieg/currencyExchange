@@ -3,7 +3,6 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './js/getCurrency.js';
-
 function displayConversion(response, amount){
   const errorArray = Object.values(response);
   if(response.result === 'success'){
@@ -43,7 +42,6 @@ function displayConversion(response, amount){
     $('div#error-div').show().html(`<p class="text-center warning">An Error occured: Please enter a missing currency or valid amount</p>`);
   } 
 }
-
 function returnHome(){
   $('button#return').on('click', function(){
     $('div#error-div').hide();
@@ -51,13 +49,11 @@ function returnHome(){
     $('div.hide').show();
   });
 }
-
 function clearValues(){
   $('select#currency-1').val('');
   $('select#currency-2').val('');
   $('input#amount').val('');
 }
-
 function main(){
   $('button#convert').on('click', function(){
     const currency1 = $('select#currency-1').val();
