@@ -43,9 +43,9 @@ This is a program that communicates with the [ExchangeRate API](https://www.exch
     * API_KEY is the default variable name used by the program
     * If you want to use a different variable name, change the name in the .env file AND in the src/js/getCurrency.js file
 
-## Known Bugs
+## Known Bugs/Problems
 
-* _No Known Issues_
+* _Limited Currency options, will be updated to all 160 offered by API in the future_
 
 ## License
 
