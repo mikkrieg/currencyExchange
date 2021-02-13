@@ -2,7 +2,7 @@
 
 #### Enter two currency types and an amount to recieve a conversion
 
-#### By Mikey Kriegel
+#### By Michael Kriegel
 
 ## Technologies Used
 
